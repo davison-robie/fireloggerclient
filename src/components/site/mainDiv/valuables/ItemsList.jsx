@@ -2,6 +2,18 @@ import React from 'react';
 import { Table } from 'reactstrap';
 
 const ItemsList = (props) => {
+  const valuablesMapper = () => {
+    return props.valueables.map((valuables, index) => {
+        return (
+            <tr key={index}>
+                <th scope="row">{valuables.id}</th>
+                <td>{valuables.name}</td>
+                <td>category</td> 
+            </tr>
+        )
+    })
+}
+
   return (
     <Table hover className="itemslist">
       <thead>
@@ -12,36 +24,7 @@ const ItemsList = (props) => {
         </tr>
       </thead>
       <tbody>
-        <tr className="item">
-          <th scope="row">1</th>
-          <td>Stereo</td>
-          <td>Electronics</td>
-        </tr>
-        <tr className="item">
-          <th scope="row">2</th>
-          <td>Grandma's Mink</td>
-          <td>Furs</td>
-        </tr>
-        <tr className="item">
-          <th scope="row">3</th>
-          <td>Heart of the Ocean</td>
-          <td>Jewelry</td>
-        </tr>
-        <tr className="item">
-          <th scope="row">4</th>
-          <td>Original Picasso</td>
-          <td>Art</td>
-        </tr>
-        <tr className="item">
-          <th scope="row">5</th>
-          <td>Medieval Sword</td>
-          <td>Antiques</td>
-        </tr>
-        <tr className="item">
-          <th scope="row">6</th>
-          <td>Nuclear Launch Codes</td>
-          <td>Electronics</td>
-        </tr>
+       {valuablesMapper}
       </tbody>
     </Table>
   );
