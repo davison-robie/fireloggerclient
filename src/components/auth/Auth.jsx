@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Modal,
@@ -20,6 +20,7 @@ const Auth = (props) => {
   const [modal, setModal] = useState(true);
   const [showLogin, setShowLogin] = useState(true);
   const [buttonText, setButtonText] = useState("Already a User?")
+
   const toggle = () => setModal(!modal);
 
   function handleClick() {
@@ -32,6 +33,12 @@ const Auth = (props) => {
     }
   }
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+     setModal(false)
+    }
+  }, []);
+
   return (
     <div>
       <Form inline onSubmit={(e) => e.preventDefault()}>
@@ -41,9 +48,9 @@ const Auth = (props) => {
       </Form>
       <Modal isOpen={modal}>
         {showLogin == true ? (
-          <Signup updateToken={props.updateToken} />
+          <Signup updateToken={props.updateToken} toggle={toggle}/>
         ) : (
-          <Login updateToken={props.updateToken} />
+          <Login updateToken={props.updateToken} toggle={toggle}/>
         )}
 
         <ModalFooter>
