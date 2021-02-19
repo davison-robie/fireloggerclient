@@ -18,8 +18,10 @@ const Signup = (props) => {
         (response) => response.json()
         ).then((data) => {
             console.log(data)
-            props.updateToken(data.updateToken)
+            props.updateToken(data.sessionToken)
+            props.toggle();
       })
+      // .catch(err => response.status(500).json({error:err}))
   }
 
   return (
@@ -46,7 +48,7 @@ const Signup = (props) => {
             required
           />
         </FormGroup>
-        <Button type="submit">Signup</Button>
+        <Button type="submit" >Signup</Button>
       </Form>
     </div>
   );
