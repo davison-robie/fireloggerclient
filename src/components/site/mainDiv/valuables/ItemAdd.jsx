@@ -2,17 +2,18 @@ import React, {useState, useEffect} from 'react';
 import {Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon,DropdownItem} from 'reactstrap';
 
 const AddValuable = (props) => {
-  const [name, setName] = useState('');
-  const [year, setYear]= useState('');
-  const [model, setModel] = useState('');
-  const [serial_number, setSerial_Number] = useState('');
-  const [photo, setPhoto] = useState('');
-  const [dollar_value, setDollar_Value] = useState('');
-  const [category, setCategory] = useState('');
+  const [name, setName] = useState('ear buds');
+  const [year, setYear]= useState('2020');
+  const [model, setModel] = useState('1234');
+  const [serial_number, setSerial_Number] = useState('1234');
+  const [photo, setPhoto] = useState('string');
+  const [dollar_value, setDollar_Value] = useState('100');
+  const [category, setCategory] = useState('electronics');
 
 
   const handleSubmit = (e) => {
       e.preventDefault();
+      debugger
       fetch('http://localhost:3000/valuables/create', {
           method: 'POST',
           body: JSON.stringify({valuables: {category: category, name: name, year: year, model: model, serial_number: serial_number, photo: photo, dollar_value: dollar_value}}),
@@ -30,7 +31,7 @@ const AddValuable = (props) => {
           setPhoto('');
           setDollar_Value('');
           setCategory('');
-          props.addVariable();
+          props.addValuable();
       })
   }
 
