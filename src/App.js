@@ -30,7 +30,7 @@ function App() {
     <div>
       <Auth updateToken={updateToken}/>
       <Router>
-      <Header />
+      <Header token={sessionToken}/>
       </Router>
       <Footer />
     </div>
