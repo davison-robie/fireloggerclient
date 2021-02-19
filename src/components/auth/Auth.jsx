@@ -39,7 +39,7 @@ const Auth = (props) => {
           Logout
         </Button>
       </Form>
-      <Modal isOpen={modal}>
+      <Modal isOpen={!modal}>
         {showLogin == true ? (
           <Signup updateToken={props.updateToken} />
         ) : (

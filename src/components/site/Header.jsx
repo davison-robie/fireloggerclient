@@ -6,7 +6,7 @@ import AboutUs from "./mainDiv/AboutUs";
 import ValuablesDisplay from "./mainDiv/valuables/ValuablesDisplay";
 import AddItem from "./mainDiv/valuables/ItemAdd";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
             <Navbar className="header">
@@ -20,7 +20,7 @@ const Header = () => {
                 <Route exact path="/"><Home /></Route>
                     <Route exact path="/aboutus"><AboutUs /></Route>
                     <Route exact path="/yourvaluables"><ValuablesDisplay /></Route>
-                    <Route exact path="/account"><AddItem /></Route>
+                    <Route exact path="/account"><AddItem token={props.token}/></Route>
                 </Switch>
             </div>
         </header>
