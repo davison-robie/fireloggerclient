@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import './App.css';
+import "./App.css";
 import Header from "./components/site/Header";
 import Footer from "./components/site/Footer";
 import Auth from "./components/auth/Auth";
-import{
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Button } from "reactstrap";
+import AddValuable from "./components/site/mainDiv/valuables/ItemAdd";
+import ValuablesDisplay from "./components/site/mainDiv/valuables/ValuablesDisplay";
 
 
 function App() {
-
   const [sessionToken, setSessionToken] = useState("");
 
   useEffect(() => {
@@ -24,13 +24,24 @@ function App() {
     setSessionToken(newToken);
     console.log(sessionToken);
   };
-
-
+  
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken("");
+  };
+  const protectedViews = () => {
+    return sessionToken === localStorage.getItem("token") ? (
+      <ValuablesDisplay token={sessionToken} />
+    ) : (
+      <Auth updateToken={updateToken} />
+    );
+  };
   return (
     <div>
-      <Auth updateToken={updateToken}/>
+      
       <Router>
-      <Header token={sessionToken}/>
+        <Header logout={clearToken} token={sessionToken} />
+        {protectedViews()}
       </Router>
       <Footer />
     </div>
