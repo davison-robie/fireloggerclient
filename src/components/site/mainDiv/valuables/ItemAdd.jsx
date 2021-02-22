@@ -13,7 +13,6 @@ const AddValuable = (props) => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      debugger
       fetch('http://localhost:3000/valuables/create', {
           method: 'POST',
           body: JSON.stringify({valuables: {category: category, name: name, year: year, model: model, serial_number: serial_number, photo: photo, dollar_value: dollar_value}}),
@@ -31,7 +30,7 @@ const AddValuable = (props) => {
           setPhoto('');
           setDollar_Value('');
           setCategory('');
-          props.addValuable();
+          console.log(valuablesData);
       })
   }
 
