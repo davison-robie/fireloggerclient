@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Table, } from 'reactstrap';
 
 const ItemsList = (props) => {
   const valuablesMapper = () => {
@@ -8,7 +8,7 @@ const ItemsList = (props) => {
             <tr key={index}>
                 <th scope="row">{valuables.id}</th>
                 <td>{valuables.name}</td>
-                <td>{valuables.category}</td> 
+                <td>{valuables.category}</td>
             </tr>
         )
     })

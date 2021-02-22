@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from "reactstrap";
 import ItemsList from "./ItemsList";
 import ItemInfoCard from "./ItemInfoCard";
 
@@ -28,9 +29,11 @@ const ValuablesDisplay = (props) => {
         <div className="main">
         <h1>Your Valuables</h1>
         <p>Lorem ipsum dolor sit afmet consectetur adipisicing elit. Iure mollitia itaque dolorum quam saepe nobis, a similique alias quidem libero veniam nesciunt odit rerum praesentium. Ratione provident excepturi ipsam ducimus.</p>
-        <ItemsList />
+        <Container>
+        <ItemsList valuables={valuables} fetchValuables={fetchValuables} token={props.token}/>
         <ItemInfoCard valuables={valuables}/>
-    </div>
+        </Container>
+        </div>
     );
 }
  
