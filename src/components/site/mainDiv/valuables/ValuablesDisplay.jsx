@@ -27,7 +27,7 @@ const ValuablesDisplay = (props) => {
         <div className="main">
         <h1>Your Valuables</h1>
         <p>Lorem ipsum dolor sit afmet consectetur adipisicing elit. Iure mollitia itaque dolorum quam saepe nobis, a similique alias quidem libero veniam nesciunt odit rerum praesentium. Ratione provident excepturi ipsam ducimus.</p>
-        <ItemsList valuables={valuables}/>
+        <ItemsList valuables={valuables} />
         </div>
     );
 }
