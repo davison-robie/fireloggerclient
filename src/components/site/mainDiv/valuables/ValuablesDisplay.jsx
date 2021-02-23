@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from "reactstrap";
 import ItemsList from "./ItemsList";
-import ItemInfoCard from "./ItemInfoCard";
 
 const ValuablesDisplay = (props) => {
     const [valuables, setValuables] = useState([]);
 
     const fetchValuables = () => {
-        fetch("http://localhost:3000/", {
+        fetch("http://localhost:3000/valuables", {
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",
@@ -16,7 +16,6 @@ const ValuablesDisplay = (props) => {
         .then((res) => res.json())
         .then((valuableData) => {
             setValuables(valuableData);
-            console.log(valuableData);
         })
     }
 
@@ -28,9 +27,8 @@ const ValuablesDisplay = (props) => {
         <div className="main">
         <h1>Your Valuables</h1>
         <p>Lorem ipsum dolor sit afmet consectetur adipisicing elit. Iure mollitia itaque dolorum quam saepe nobis, a similique alias quidem libero veniam nesciunt odit rerum praesentium. Ratione provident excepturi ipsam ducimus.</p>
-        <ItemsList />
-        <ItemInfoCard />
-    </div>
+        <ItemsList valuables={valuables}/>
+        </div>
     );
 }
  

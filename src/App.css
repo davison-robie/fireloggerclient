@@ -27,11 +27,6 @@ body {
   color: #FFD400;
 }
 
-.row {
-  background-color: #8A7E72;
-  color: #F7F7F7;
-}
-
 .main {
   color: #F7F7F7;
   min-height: 100vh;
@@ -39,8 +34,32 @@ body {
   margin: 3em auto 3em auto;
   padding-bottom: 2.5rem;
   box-shadow: #FFD400;
-  width: 90%;
   padding: 5px;
+}
+
+.displayContainer {
+  display: inline-flex;
+}
+
+.itemslist {
+  color: #F7F7F7;
+  margin: 0 auto 0 auto;
+  padding-left: 50px;
+  padding-top: 15px;
+  width: 67%;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #FFD400;
+}
+
+.card {
+  background-color: #8A7E72;
+  margin-left: 10px;
+}
+
+.form-container {
+  padding: 25px;
 }
 
 .footer {
@@ -50,18 +69,7 @@ body {
   height: 2.5rem;
 }
 
-.itemslist {
-  display: flex;
+.row {
+  background-color: #8A7E72;
   color: #F7F7F7;
-  padding-left: 50px;
-  padding-top: 15px;
-  width: 33%;
-}
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #FFD400;
-}
-
-.form-container {
-  padding: 25px;
 }

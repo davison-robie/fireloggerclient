@@ -31,7 +31,7 @@ function App() {
   };
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <ValuablesDisplay token={sessionToken} />
+      ""
     ) : (
       <Auth updateToken={updateToken} />
     );
