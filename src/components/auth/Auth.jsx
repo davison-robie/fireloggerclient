@@ -7,7 +7,7 @@ import Login from "./Login";
 
 const Auth = (props) => {
   const { buttonLabel, className } = props;
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
   const [showLogin, setShowLogin] = useState(true);
   const [buttonText, setButtonText] = useState("Already a User?");
 

@@ -1,20 +1,23 @@
-import React from 'react';
-import { Table, } from 'reactstrap';
+import React, { useState } from 'react';
+import { Container, Table } from 'reactstrap';
+import ItemInfoCard from "./ItemInfoCard";
 
 const ItemsList = (props) => {
   const valuablesMapper = () => {
-    return props.valuables.map((valuables, index) => {
+    return props.valuables.map((valuable, index) => {
         return (
-            <tr key={index}>
-                <th scope="row">{valuables.id}</th>
-                <td>{valuables.name}</td>
-                <td>{valuables.category}</td>
+            <tr className="tableRow" key={index} 
+            onClick={e => console.log(valuable)}>
+                <th scope="row">{index + 1}</th>
+                <td>{valuable.name}</td>
+                <td>{valuable.category}</td>
             </tr>
         )
     })
 }
 
   return (
+    <Container className="displayContainer">
     <Table hover className="itemslist">
       <thead>
         <tr>
@@ -24,9 +27,10 @@ const ItemsList = (props) => {
         </tr>
       </thead>
       <tbody>
-       {valuablesMapper}
+        {props.valuables.length != undefined ? valuablesMapper() : ""}
       </tbody>
     </Table>
+    </Container>
   );
 }
 
