@@ -56,7 +56,7 @@ const Header = (props) => {
             <AboutUs />
           </Route>
           <Route exact path="/yourvaluables">
-            <ValuablesDisplay />
+            <ValuablesDisplay token={props.token}/>
           </Route>
           <Route exact path="/account">
             <AddItem token={props.token} />

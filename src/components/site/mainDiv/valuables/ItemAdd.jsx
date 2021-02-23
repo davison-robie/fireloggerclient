@@ -35,6 +35,7 @@ const AddValuable = (props) => {
   }
 
   return (
+    <div className="main">
     <Form onSubmit={handleSubmit}>
         <FormGroup>
         <DropdownItem header>Categories of Valuables</DropdownItem>
@@ -89,6 +90,7 @@ const AddValuable = (props) => {
       <br />
       <br />
 </Form>
+    </div>
 
   );
 }
