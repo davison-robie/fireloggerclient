@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { Container, Table } from 'reactstrap';
+import { Card, Table } from 'reactstrap';
 import ItemInfoCard from "./ItemInfoCard";
 
 const ItemsList = (props) => {
+  const [oneValuable, setOneValuable] = useState([]);
+
   const valuablesMapper = () => {
     return props.valuables.map((valuable, index) => {
         return (
             <tr className="tableRow" key={index} 
-            onClick={e => console.log(valuable)}>
+            onClick={(e) => {
+              console.log(valuable);
+              setOneValuable(valuable)
+            }}>
                 <th scope="row">{index + 1}</th>
                 <td>{valuable.name}</td>
                 <td>{valuable.category}</td>
@@ -17,7 +22,9 @@ const ItemsList = (props) => {
 }
 
   return (
-    <Container className="displayContainer">
+    <div>
+    <ItemInfoCard valuable={oneValuable}/>
+    <Card className="displayContainer">
     <Table hover className="itemslist">
       <thead>
         <tr>
@@ -30,7 +37,8 @@ const ItemsList = (props) => {
         {props.valuables.length != undefined ? valuablesMapper() : ""}
       </tbody>
     </Table>
-    </Container>
+    </Card>
+    </div>
   );
 }
 

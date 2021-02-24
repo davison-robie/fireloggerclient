@@ -29,16 +29,18 @@ body {
 
 .main {
   color: #F7F7F7;
-  min-height: 100vh;
   width: 67%;
   margin: 3em auto 3em auto;
-  padding-bottom: 2.5rem;
-  box-shadow: #FFD400;
-  padding: 5px;
 }
 
+/* .itemContainer {
+  max-height: 67vh;
+} */
+
 .displayContainer {
-  display: inline-flex;
+  max-height: 225px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .itemslist {
@@ -51,11 +53,13 @@ body {
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #FFD400;
+  cursor: pointer;
 }
 
-.card {
+.itemInfoCard {
   background-color: #8A7E72;
-  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 10px #FFD400;
 }
 
 .form-container {
