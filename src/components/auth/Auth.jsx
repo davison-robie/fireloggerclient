@@ -26,7 +26,7 @@ const Auth = (props) => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setModal(false);
-    }
+    } 
   }, []);
 
   return (

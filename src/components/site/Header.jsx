@@ -29,7 +29,7 @@ const Header = (props) => {
             About Us
           </Link>
         </NavLink>
-        <Button color='primary' className="float-right" onClick={props.logout}>        <svg
+        <Button color='primary' className="float-right" onClick={props.logout } href="/">        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -56,7 +56,7 @@ const Header = (props) => {
             <AboutUs />
           </Route>
           <Route exact path="/yourvaluables">
-            <ValuablesDisplay token={props.token}/>
+            <ValuablesDisplay token={props.token} logout={props.logout}/>
           </Route>
           <Route exact path="/account">
             <AddItem token={props.token} />
