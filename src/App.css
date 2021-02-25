@@ -29,25 +29,22 @@ body {
 
 .main {
   color: #F7F7F7;
+  margin: 0 auto 0 auto;
   width: 67%;
-  margin: 3em auto 3em auto;
 }
-
-/* .itemContainer {
-  max-height: 67vh;
-} */
 
 .displayContainer {
   max-height: 225px;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto 0 auto;
 }
 
 .itemslist {
   color: #F7F7F7;
-  margin: 0 auto 0 auto;
+  margin: 10px auto 0 auto;
   padding-left: 50px;
-  padding-top: 15px;
+  
   width: 67%;
 }
 

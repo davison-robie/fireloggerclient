@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Table } from 'reactstrap';
+import { Card, Table, CardDeck } from 'reactstrap';
 import ItemInfoCard from "./ItemInfoCard";
 
 const ItemsList = (props) => {
@@ -22,7 +22,7 @@ const ItemsList = (props) => {
 }
 
   return (
-    <div>
+    <CardDeck className="mainValuableDiv">
     <ItemInfoCard valuable={oneValuable}/>
     <Card className="displayContainer">
     <Table hover className="itemslist">
@@ -38,7 +38,7 @@ const ItemsList = (props) => {
       </tbody>
     </Table>
     </Card>
-    </div>
+    </CardDeck>
   );
 }
 
