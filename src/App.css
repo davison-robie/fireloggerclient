@@ -29,33 +29,34 @@ body {
 
 .main {
   color: #F7F7F7;
-  min-height: 100vh;
+  margin: 0 auto 0 auto;
   width: 67%;
-  margin: 3em auto 3em auto;
-  padding-bottom: 2.5rem;
-  box-shadow: #FFD400;
-  padding: 5px;
 }
 
 .displayContainer {
-  display: inline-flex;
+  max-height: 225px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto 0 auto;
 }
 
 .itemslist {
   color: #F7F7F7;
-  margin: 0 auto 0 auto;
+  margin: 10px auto 0 auto;
   padding-left: 50px;
-  padding-top: 15px;
+  
   width: 67%;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #FFD400;
+  cursor: pointer;
 }
 
-.card {
+.itemInfoCard {
   background-color: #8A7E72;
-  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 10px #FFD400;
 }
 
 .form-container {
