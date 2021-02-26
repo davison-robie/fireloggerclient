@@ -12,7 +12,6 @@ import {
   FormText,
   InputGroup,
   InputGroupAddon,
-  DropdownItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -28,7 +27,12 @@ const AddValuable = (props) => {
   /*************MODAL HANDLING**************/
   const { buttonLabel, className } = props;
   const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    if (modal) {
+      setName('')
+    }
+    setModal(!modal)
+  }
   const reload = () => window.location.reload();
 
   const handleSubmit = (e) => {
@@ -48,12 +52,12 @@ const AddValuable = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        "Authorization": props.token,
       }),
     })
       .then((res) => res.json())
       .then((valuablesData) => {
-        setName("");
+        toggle();
         setYear("");
         setModel("");
         setSerial_Number("");
@@ -61,14 +65,14 @@ const AddValuable = (props) => {
         setDollar_Value("");
         setCategory("");
         console.log(valuablesData);
-      });
+      })
   };
 
   return (
     <div className="main">
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <DropdownItem header>Categories of Valuables</DropdownItem>
+          <Label for="category">Categories of Valuables</Label>
           <Input
             type="select"
             name="select"
@@ -158,7 +162,7 @@ const AddValuable = (props) => {
           </FormText>
           <br />
           <br />
-          <Button outline color="warning" onClick={toggle}>
+          <Button outline color="warning">
             Submit
           </Button>
         </FormGroup>
@@ -170,9 +174,13 @@ const AddValuable = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Success!</ModalHeader>
         <ModalBody>
+        {/* {'Your valuable has been logged'} */}
+
           {'The following valuable has been logged:'}
           <br />
-          <strong>{`${name}`}</strong>
+          <strong>
+          {name}
+          </strong>
           <br />
           {'What would you like to do next?'}
         </ModalBody>

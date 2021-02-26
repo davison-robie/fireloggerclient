@@ -1,7 +1,7 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React, { useState, useEffect } from "react";
-import { Button, Modal, ModalFooter, Form } from "reactstrap";
+import { Button, Modal, ModalFooter, Form, ModalHeader } from "reactstrap";
 import Signup from "./Signup";
 import Login from "./Login";
 
@@ -32,7 +32,8 @@ const Auth = (props) => {
   return (
     <div>
       <Form onSubmit={(e) => e.preventDefault()}>
-        <Modal isOpen={modal}>
+        <Modal isOpen={modal} >
+          <ModalHeader toggle={toggle}>Welcome to Firelogger</ModalHeader>
           <div className="form-container">
             {showLogin == true ? (
               <Signup updateToken={props.updateToken} toggle={toggle} />
