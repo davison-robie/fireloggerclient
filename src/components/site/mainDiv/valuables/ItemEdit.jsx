@@ -49,9 +49,11 @@ const ItemEdit = (props) => {
         })
     }
 
+    const closeBtn = <button className="close" onClick={props.editOff}>&times;</button>;
+
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Update Item</ModalHeader>
+            <ModalHeader close={closeBtn}>Update Item</ModalHeader>
             <ModalBody>
                 <Form onSubmit={valuableUpdate}>
                 <FormGroup>

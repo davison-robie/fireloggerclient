@@ -4,7 +4,7 @@ import ItemInfoCard from "./ItemInfoCard";
 import ItemEdit from "./ItemEdit";
 
 const ItemsList = (props) => {
-  const [oneValuable, setOneValuable] = useState([]);
+  const [oneValuable, setOneValuable] = useState([props.valuable]);
   const [modal, setModal] = useState(false);
   const [valuableToUpdate, setValuableToUpdate] = useState({});
 
