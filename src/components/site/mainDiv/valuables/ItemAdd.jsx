@@ -48,12 +48,12 @@ const AddValuable = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: props.token,
+        "Authorization": props.token,
       }),
     })
       .then((res) => res.json())
       .then((valuablesData) => {
-        setName("");
+        toggle();
         setYear("");
         setModel("");
         setSerial_Number("");
@@ -158,7 +158,7 @@ const AddValuable = (props) => {
           </FormText>
           <br />
           <br />
-          <Button outline color="warning" onClick={toggle}>
+          <Button outline color="warning">
             Submit
           </Button>
         </FormGroup>
