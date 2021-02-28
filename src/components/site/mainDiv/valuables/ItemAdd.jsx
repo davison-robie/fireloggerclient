@@ -1,19 +1,43 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon,DropdownItem} from 'reactstrap';
 
+
 const AddValuable = (props) => {
+
+  const [photo, setPhoto] = useState('');
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState('ear buds');
   const [year, setYear]= useState('2020');
   const [model, setModel] = useState('1234');
   const [serial_number, setSerial_Number] = useState('1234');
-  const [photo, setPhoto] = useState('string');
   const [dollar_value, setDollar_Value] = useState('100');
-  const [category, setCategory] = useState('electronics');
+  const [category, setCategory] = useState('');
 
 
+  const uploadImage = async e => {
+    const files = e.target.files 
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'thePicCloud')
+    setLoading(true)
+    const res = await fetch(
+    'https://api.cloudinary.com/v1_1/dqaf1fih0/image/upload',
+    {
+      method: 'POST',
+      body: data
+    }
+  )
+  
+  const file = await res.json()
+  
+  setPhoto(file.secure_url)
+  console.log(file.secure_url)
+  setLoading(false)
+  
+  }
+  
   const handleSubmit = (e) => {
       e.preventDefault();
-      debugger
       fetch('http://localhost:3000/valuables/create', {
           method: 'POST',
           body: JSON.stringify({valuables: {category: category, name: name, year: year, model: model, serial_number: serial_number, photo: photo, dollar_value: dollar_value}}),
@@ -31,7 +55,6 @@ const AddValuable = (props) => {
           setPhoto('');
           setDollar_Value('');
           setCategory('');
-          props.addValuable();
       })
   }
 
@@ -40,6 +63,7 @@ const AddValuable = (props) => {
         <FormGroup>
         <DropdownItem header>Categories of Valuables</DropdownItem>
         <Input type="select" name="select" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option></option>
           <option>Electronics</option>
           <option>Jewelry</option>
           <option>Furs</option>
@@ -79,9 +103,14 @@ const AddValuable = (props) => {
       <FormGroup>
       <FormText color="secondary">
         <Label for="photoUrl">Photo of Insured's Valuable</Label>
-        <Input type="file" name="photoUrl" id="exampleFile" />
+        <Input type="file" name="file" placeholder="upload an image" onChange={uploadImage} />
         <br />
-          A clear picture of the valuable the insured is inquiring to cover is required for claims record purposes. 
+
+        {loading ? (
+          <h3> Loading...</h3>
+        ) : (
+        <img src={photo} style={{width: '300px'}} />
+        )}
         </FormText>
         <br/>
         <br/>
@@ -92,20 +121,6 @@ const AddValuable = (props) => {
 </Form>
 
   );
-}
 
+  }
 export default AddValuable;
-
-
-      /*<FormGroup>
-        <Label for="exampleSelectMulti">Select Multiple</Label>
-        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-    
-    selection for multiple scroll options*/

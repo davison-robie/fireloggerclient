@@ -27,20 +27,40 @@ body {
   color: #FFD400;
 }
 
-.row {
-  background-color: #8A7E72;
-  color: #F7F7F7;
-}
-
 .main {
   color: #F7F7F7;
-  min-height: 100vh;
+  margin: 0 auto 0 auto;
   width: 67%;
-  margin: 3em auto 3em auto;
-  padding-bottom: 2.5rem;
-  box-shadow: #FFD400;
-  width: 90%;
-  padding: 5px;
+}
+
+.displayContainer {
+  max-height: 225px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto 0 auto;
+}
+
+.itemslist {
+  color: #F7F7F7;
+  margin: 10px auto 0 auto;
+  padding-left: 50px;
+  
+  width: 67%;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #FFD400;
+  cursor: pointer;
+}
+
+.itemInfoCard {
+  background-color: #8A7E72;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 10px #FFD400;
+}
+
+.form-container {
+  padding: 25px;
 }
 
 .footer {
@@ -50,14 +70,7 @@ body {
   height: 2.5rem;
 }
 
-.itemslist {
-  display: flex;
+.row {
+  background-color: #8A7E72;
   color: #F7F7F7;
-  padding-left: 50px;
-  padding-top: 15px;
-  width: 33%;
-}
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #FFD400;
 }
