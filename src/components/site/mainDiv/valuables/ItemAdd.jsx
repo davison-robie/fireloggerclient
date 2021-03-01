@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
+
 const AddValuable = (props) => {
   const [name, setName] = useState("ear buds");
   const [year, setYear] = useState("2020");
@@ -35,6 +36,28 @@ const AddValuable = (props) => {
   }
   const reload = () => window.location.reload();
 
+  const uploadImage = async e => {
+    const files = e.target.files 
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'thePicCloud')
+    setLoading(true)
+    const res = await fetch(
+    'https://api.cloudinary.com/v1_1/dqaf1fih0/image/upload',
+    {
+      method: 'POST',
+      body: data
+    }
+  )
+  
+  const file = await res.json()
+  
+  setPhoto(file.secure_url)
+  console.log(file.secure_url)
+  setLoading(false)
+  
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:3000/valuables/create", {
@@ -72,6 +95,7 @@ const AddValuable = (props) => {
     <div className="main">
       <Form onSubmit={handleSubmit}>
         <FormGroup>
+            
           <Label for="category">Categories of Valuables</Label>
           <Input
             type="select"
@@ -151,24 +175,29 @@ const AddValuable = (props) => {
           <InputGroupAddon addonType="append">.00</InputGroupAddon>
         </InputGroup>
 
+<br/>
+<br/>
+      <FormGroup>
+      <FormText color="secondary">
+        <Label for="photoUrl">Photo of Insured's Valuable</Label>
+        <Input type="file" name="file" placeholder="upload an image" onChange={uploadImage} />
         <br />
-        <br />
-        <FormGroup>
-          <FormText color="secondary">
-            <Label for="photoUrl">Photo of Insured's Valuable</Label>
-            <Input type="file" name="photoUrl" id="exampleFile" />
-            <br />A clear picture of the valuable the insured is inquiring to
-            cover is required for claims record purposes.
-          </FormText>
-          <br />
-          <br />
-          <Button outline color="warning">
-            Submit
-          </Button>
-        </FormGroup>
-        <br />
-        <br />
-      </Form>
+
+        {loading ? (
+          <h3> Loading...</h3>
+        ) : (
+        <img src={photo} style={{width: '300px'}} />
+        )}
+        </FormText>
+        <br/>
+        <br/>
+        <Button outline color="warning">Submit</Button>
+      </FormGroup>
+      <br />
+      <br />
+</Form>
+
+   
 
       {/**************MODAL DISPLAY***************/}
       <Modal isOpen={modal} toggle={toggle} className={className}>
@@ -200,16 +229,3 @@ const AddValuable = (props) => {
 };
 
 export default AddValuable;
-
-/*<FormGroup>
-        <Label for="exampleSelectMulti">Select Multiple</Label>
-        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-    
-    selection for multiple scroll options*/
