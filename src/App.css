@@ -5,6 +5,7 @@
 body {
   background: linear-gradient(#090302, #5A2328);
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .header {
@@ -28,24 +29,25 @@ body {
 }
 
 .main {
-  color: #F7F7F7;
-  margin: 0 auto 0 auto;
-  width: 67%;
+  color: #F7F7F7 !important;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  width: 84%;
 }
 
 .displayContainer {
-  max-height: 225px;
-  overflow: auto;
+  color: #F7F7F7;
+  width: 84%;
+  text-align: left;
   background-color: rgba(0, 0, 0, 0);
-  margin: 0 auto 0 auto;
+  margin: 1em auto -1em auto;
+  max-height: 20em;
+  overflow: auto;
 }
 
-.itemslist {
+.itemsList {
+  margin: 0 auto 0 auto;
   color: #F7F7F7;
-  margin: 10px auto 0 auto;
-  padding-left: 50px;
-  
-  width: 67%;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
