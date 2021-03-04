@@ -30,10 +30,10 @@ function App() {
     setSessionToken("");
   };
   const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      ""
-    ) : (
+    return sessionToken != localStorage.getItem("token") ? (
       <Auth updateToken={updateToken} />
+    ) : (
+      ""
     );
   };
 
@@ -41,7 +41,7 @@ function App() {
     <div>
       
       <Router>
-        <Header logout={clearToken} token={sessionToken} />
+        <Header logout={clearToken} token={sessionToken} updateToken={updateToken} />
         {protectedViews()}
       </Router>
       <Footer />

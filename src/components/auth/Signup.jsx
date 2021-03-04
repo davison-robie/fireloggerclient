@@ -21,7 +21,6 @@ const Signup = (props) => {
             props.updateToken(data.sessionToken)
             props.toggle();
       })
-      // .catch(err => response.status(500).json({error:err}))
   }
 
   return (
@@ -44,6 +43,7 @@ const Signup = (props) => {
             onChange={(e) => setPassword(e.target.value)}
             minLength="5"
             name="password"
+            type="password"
             value={password}
             required
           />

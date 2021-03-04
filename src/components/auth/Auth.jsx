@@ -44,7 +44,7 @@ const Auth = (props) => {
             <ModalFooter>
               <Button color="primary" onClick={handleClick}>
                 {buttonText}
-              </Button>{" "}
+              </Button>
             </ModalFooter>
           </div>
         </Modal>

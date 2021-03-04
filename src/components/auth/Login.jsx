@@ -19,7 +19,6 @@ const Login = (props) => {
         props.updateToken(data.sessionToken);
         props.toggle();
       })
-      // .catch((err) => response.status(500).json({ error: err }));
   };
 
   return (
@@ -41,6 +40,7 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             value={password}
+            type="password"
             required
           />
         </FormGroup>

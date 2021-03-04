@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 
 
+
 const AddValuable = (props) => {
   const [name, setName] = useState("ear buds");
   const [year, setYear] = useState("2020");
@@ -24,6 +25,7 @@ const AddValuable = (props) => {
   const [photo, setPhoto] = useState("string");
   const [dollar_value, setDollar_Value] = useState("100");
   const [category, setCategory] = useState("electronics");
+  const [loading, setLoading] = useState('');
 
   /*************MODAL HANDLING**************/
   const { buttonLabel, className } = props;
