@@ -1,14 +1,18 @@
 .App {
   text-align: center;
+  font-family: 'Bebas Neue', cursive;
 }
 
 body {
   background: linear-gradient(#090302, #5A2328);
+  font-family: 'Bebas Neue', cursive;
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .header {
   background-color: #8A7E72;
+  font-family: 'Bebas Neue', cursive;
 }
 
 .brand {
@@ -27,20 +31,69 @@ body {
   color: #FFD400;
 }
 
-.row {
-  background-color: #8A7E72;
-  color: #F7F7F7;
+.main {
+  color: #F7F7F7 !important;
+  text-align: left;
+  margin: 1em auto 0 auto;
+  width: 84%;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
-.main {
+.jumbotron {
+  background: rgba(0, 0, 0, 0);
+}
+
+.jumbotron h1 {
+  font-family: 'Bebas Neue', cursive !important;
+  color: #FFD400;
+}
+
+.jumbotron h1 img {
+  width: 11%;
+}
+
+.itemContainer h1 {
+  font-family: 'Bebas Neue', cursive !important;
+}
+
+.displayContainer {
   color: #F7F7F7;
-  min-height: 100vh;
-  width: 67%;
-  margin: 3em auto 3em auto;
-  padding-bottom: 2.5rem;
-  box-shadow: #FFD400;
-  width: 90%;
-  padding: 5px;
+  width: 84%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 2em auto 4em auto;
+  max-height: 20em;
+  overflow: auto;
+}
+
+.itemsList {
+  margin: 0 auto 0 auto;
+  color: #F7F7F7;
+  font-family: 'Roboto', sans-serif;
+  width: 84%;
+}
+
+.itemsListBody {
+  width: 84%;
+  max-height: 20em;
+  overflow: auto;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #FFD400;
+  cursor: pointer;
+}
+
+.itemInfoCard {
+  background-color: #8A7E72;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 10px #FFD400;
+}
+
+.form-container {
+  padding: 25px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer {
@@ -50,14 +103,45 @@ body {
   height: 2.5rem;
 }
 
-.itemslist {
-  display: flex;
+.row {
+  background-color: #8A7E72;
   color: #F7F7F7;
-  padding-left: 50px;
-  padding-top: 15px;
-  width: 33%;
 }
 
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #FFD400;
+.aboutus {
+  color: #8A7E72 ;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  width: 84%;
+}
+
+.aboutus h1 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.aboutus p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.ourstory {
+  color: #FFD400;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  width: 84%;
+}
+
+.ourstory p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.hanksstory{
+color:#FFD400;
+text-align: center;
+margin: 1em auto 0 auto;
+width: 84%;
+font-size: 20px;
+}
+
+.hanksstory p {
+  font-family: 'Roboto', sans-serif;
 }
