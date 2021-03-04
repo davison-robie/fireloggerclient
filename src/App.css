@@ -52,6 +52,10 @@ body {
   width: 11%;
 }
 
+.itemContainer h1 {
+  font-family: 'Bebas Neue', cursive !important;
+}
+
 .displayContainer {
   color: #F7F7F7;
   width: 84%;
@@ -65,6 +69,7 @@ body {
 .itemsList {
   margin: 0 auto 0 auto;
   color: #F7F7F7;
+  font-family: 'Roboto', sans-serif;
   width: 84%;
 }
 
@@ -81,12 +86,14 @@ body {
 
 .itemInfoCard {
   background-color: #8A7E72;
+  font-family: 'Roboto', sans-serif;
   padding: 10px 10px 10px 10px;
   box-shadow: 5px 5px 10px #FFD400;
 }
 
 .form-container {
   padding: 25px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer {
@@ -108,11 +115,23 @@ body {
   width: 84%;
 }
 
+.aboutus h1 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.aboutus p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .ourstory {
   color: #FFD400;
   text-align: center;
   margin: 1em auto 0 auto;
   width: 84%;
+}
+
+.ourstory p {
+  font-family: 'Roboto', sans-serif;
 }
 
 .hanksstory{
@@ -121,5 +140,8 @@ text-align: center;
 margin: 1em auto 0 auto;
 width: 84%;
 font-size: 20px;
+}
 
+.hanksstory p {
+  font-family: 'Roboto', sans-serif;
 }
