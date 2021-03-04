@@ -21,7 +21,6 @@ const Signup = (props) => {
             props.updateToken(data.sessionToken)
             props.toggle();
       })
-      // .catch(err => response.status(500).json({error:err}))
   }
 
   return (
@@ -45,6 +44,7 @@ const Signup = (props) => {
             minLength="5"
             name="password"
             value={password}
+            type="password"
             required
           />
         </FormGroup>

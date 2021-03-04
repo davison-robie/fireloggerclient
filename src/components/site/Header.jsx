@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import Home from "./mainDiv/Home";
 import AboutUs from "./mainDiv/AboutUs";
 import ValuablesDisplay from "./mainDiv/valuables/ValuablesDisplay";
@@ -8,6 +8,7 @@ import AddItem from "./mainDiv/valuables/ItemAdd";
 import logo from "./mainDiv/assets/fireLoggerSafe.png";
 import HanksStory from "./mainDiv/HanksStory";
 import OurStory from "./mainDiv/OurStory";
+import Auth from '../auth/Auth'
 
 
 const Header = (props) => {
@@ -58,9 +59,11 @@ const Header = (props) => {
             <AboutUs />
           </Route>
           <Route exact path="/yourvaluables">
+          {props.token ==false ? <Auth updateToken={props.updateToken}/> : <Redirect to="/yourvaluables" /> }
             <ValuablesDisplay token={props.token} logout={props.logout}/>
           </Route>
           <Route exact path="/account">
+          {props.token ==false ? <Auth updateToken={props.updateToken} /> : <Redirect to="/account"/> }
             <AddItem token={props.token} />
           </Route>
           <Route exact path="/ourstory">
