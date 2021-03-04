@@ -19,7 +19,6 @@ const Login = (props) => {
         props.updateToken(data.sessionToken);
         props.toggle();
       })
-      // .catch((err) => response.status(500).json({ error: err }));
   };
 
   return (
