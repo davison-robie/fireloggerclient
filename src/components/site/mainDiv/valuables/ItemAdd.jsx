@@ -17,13 +17,13 @@ import { Link } from "react-router-dom";
 
 
 const AddValuable = (props) => {
-  const [name, setName] = useState("ear buds");
-  const [year, setYear] = useState("2020");
-  const [model, setModel] = useState("1234");
-  const [serial_number, setSerial_Number] = useState("1234");
-  const [photo, setPhoto] = useState("string");
+  const [name, setName] = useState("");
+  const [year, setYear] = useState("");
+  const [model, setModel] = useState("");
+  const [serial_number, setSerial_Number] = useState("");
+  const [photo, setPhoto] = useState("");
   const [loading, setLoading] = useState(false);
-  const [dollar_value, setDollar_Value] = useState("100");
+  const [dollar_value, setDollar_Value] = useState("");
   const [category, setCategory] = useState("electronics");
 
   /*************MODAL HANDLING**************/

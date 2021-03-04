@@ -100,3 +100,26 @@ body {
   background-color: #8A7E72;
   color: #F7F7F7;
 }
+
+.aboutus {
+  color: #8A7E72 ;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  width: 84%;
+}
+
+.ourstory {
+  color: #FFD400;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  width: 84%;
+}
+
+.hanksstory{
+color:#FFD400;
+text-align: center;
+margin: 1em auto 0 auto;
+width: 84%;
+font-size: 20px;
+
+}
