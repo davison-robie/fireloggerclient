@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardBody, Table, Container } from 'reactstrap';
 import ItemInfoCard from "./ItemInfoCard";
 import ItemEdit from "./ItemEdit";
 
 const ItemsList = (props) => {
-  const [oneValuable, setOneValuable] = useState([props.valuable]);
+  const [oneValuable, setOneValuable] = useState([]);
   const [modal, setModal] = useState(false);
   const [valuableToUpdate, setValuableToUpdate] = useState({});
 
@@ -23,6 +23,13 @@ const ItemsList = (props) => {
         )
     })
 }
+
+useEffect(() => { 
+  if (props.valuables.length === 0){
+    return
+  }
+  setOneValuable(props.valuables[0])
+}, [props.valuables]);
 
 const editUpdateValuable = (valuable) => {
   setValuableToUpdate(valuable);
@@ -49,8 +56,8 @@ const editOff = () => {
             </tr>
           </thead>
           <tbody className="itemsListBody">
-            {props.valuables.length != undefined ? valuablesMapper() : ""}
-          </tbody>
+              {props.valuables.length != undefined ? valuablesMapper() : ""}
+            </tbody>
         </Table>
       </Card>
       {modal ? <ItemEdit valuable={valuableToUpdate} editUpdateValuable={editUpdateValuable}
