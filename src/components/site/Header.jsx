@@ -5,6 +5,7 @@ import Home from "./mainDiv/Home";
 import AboutUs from "./mainDiv/AboutUs";
 import ValuablesDisplay from "./mainDiv/valuables/ValuablesDisplay";
 import AddItem from "./mainDiv/valuables/ItemAdd";
+import logo from "./mainDiv/assets/fireLoggerSafe.png";
 
 
 const Header = (props) => {
@@ -12,7 +13,7 @@ const Header = (props) => {
     <header>
       <Navbar className="header">
         <NavbarBrand href="/" className="brand">
-          FireLogger
+          FireLogger<img src={logo} width="25px"></img>
         </NavbarBrand>
         <NavLink>
           <Link to="/yourvaluables" className="inactive">

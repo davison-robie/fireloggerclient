@@ -22,6 +22,7 @@ const AddValuable = (props) => {
   const [model, setModel] = useState("1234");
   const [serial_number, setSerial_Number] = useState("1234");
   const [photo, setPhoto] = useState("string");
+  const [loading, setLoading] = useState(false);
   const [dollar_value, setDollar_Value] = useState("100");
   const [category, setCategory] = useState("electronics");
 

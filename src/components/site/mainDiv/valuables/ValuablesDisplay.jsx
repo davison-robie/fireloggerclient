@@ -11,7 +11,7 @@ const ValuablesDisplay = (props) => {
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",
-                "Authorization": props.token
+                "Authorization": props.token ? props.token : localStorage.getItem("token")
             })
         })
         .then((res) => res.json())

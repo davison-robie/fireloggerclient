@@ -11,6 +11,7 @@ const ItemInfoCard = (props) => {
             })
         })
         .then(() => props.fetchValuables())
+        
     };
 
     return (
@@ -26,7 +27,7 @@ const ItemInfoCard = (props) => {
                             <CardText>Dollar Value: {props.valuable.dollar_value}</CardText>
                         </Card>
                         <Card className="itemInfoCard">
-                            <CardImg top width="100%" src={props.valuable.photo}/>
+                            <CardImg src={props.valuable.photo} size="cover"/>
                             <CardFooter>
                                 <Button bottom width="67%" color="danger" onClick={() => {deleteValuable(props.valuable)}}>Delete</Button>
                                 <Button color="warning" onClick={(e) => {
