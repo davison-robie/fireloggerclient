@@ -40,6 +40,7 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             value={password}
+            type="password"
             required
           />
         </FormGroup>
