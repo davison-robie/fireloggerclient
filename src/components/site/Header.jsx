@@ -5,6 +5,8 @@ import AboutUs from "./mainDiv/AboutUs";
 import ValuablesDisplay from "./mainDiv/valuables/ValuablesDisplay";
 import AddItem from "./mainDiv/valuables/ItemAdd";
 import Auth from '../auth/Auth'
+import HanksStory from "./mainDiv/HanksStory";
+import OurStory from "./mainDiv/OurStory";
 
 
 const Header = (props) => {
@@ -63,6 +65,12 @@ const Header = (props) => {
           <Route exact path="/account">
             {props.token ==false ? <Auth updateToken={props.updateToken} /> : <Redirect to="/account"/> }
             <AddItem token={props.token} />
+          </Route>
+          <Route exact path="/ourstory">
+          <OurStory />
+          </Route>
+          <Route exact path="/hanksstory">
+            <HanksStory />
           </Route>
         </Switch>
       </div>
