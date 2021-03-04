@@ -52,6 +52,10 @@ body {
   width: 11%;
 }
 
+.itemContainer h1 {
+  font-family: 'Bebas Neue', cursive !important;
+}
+
 .displayContainer {
   color: #F7F7F7;
   width: 84%;
