@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Card, CardText, CardTitle, CardImg, CardFooter, Button, CardGroup } from "reactstrap";
+import APIURL from "../../../../helpers/environment"
 
 const ItemInfoCard = (props) => {
     const deleteValuable = (valuable) => {
-        fetch(`http://localhost:3000/valuables/delete/${valuable.id}`, {
+        fetch(`${APIURL}/valuables/delete/${valuable.id}`, {
             method: "DELETE",
             headers: new Headers({
                 "Content-Type": "application/json",
                 "Authorization": props.token
             })
         })
-        .then(() => props.fetchValuables())
-        
+        .then(() => props.fetchValuables())  
     };
 
     return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from "reactstrap";
 import ItemsList from "./ItemsList";
-import ItemEdit from "./ItemEdit";
+import APIURL from "../../../../helpers/environment"
 
 const ValuablesDisplay = (props) => {
     const [valuables, setValuables] = useState([]);
 
     const fetchValuables = () => {
-        fetch("http://localhost:3000/valuables", {
+        fetch(`${APIURL}/valuables`, {
             method: "GET",
             headers: new Headers ({
                 "Content-Type": "application/json",

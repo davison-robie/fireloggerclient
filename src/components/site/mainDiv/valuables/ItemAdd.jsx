@@ -14,6 +14,7 @@ import {
   InputGroupAddon,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import APIURL from "../../../../helpers/environment"
 
 
 const AddValuable = (props) => {
@@ -61,7 +62,7 @@ const AddValuable = (props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/valuables/create", {
+    fetch(`${APIURL}/valuables/create`, {
       method: "POST",
       body: JSON.stringify({
         valuables: {

@@ -14,6 +14,7 @@ import {
     ModalHeader, 
     ModalFooter
 } from 'reactstrap';
+import APIURL from "../../../../helpers/environment"
 
 const ItemEdit = (props) => {
     const[editCategory, setEditCategory] = useState(props.valuable.category)
@@ -26,7 +27,7 @@ const ItemEdit = (props) => {
 
     const valuableUpdate = (event, valuable) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/valuables/update/${props.valuable.id}`, {
+        fetch(`${APIURL}/valuables/update/${props.valuable.id}`, {
             method: 'PUT',
             body: JSON.stringify(
                 {valuables: {
