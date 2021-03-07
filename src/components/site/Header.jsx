@@ -33,7 +33,7 @@ const Header = (props) => {
             About Us
           </Link>
         </NavLink>
-        <Button color='primary' className="float-right" onClick={props.logout } href="/">        <svg
+        <Button outline color="warning" className="float-right" onClick={props.logout } href="/">        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"

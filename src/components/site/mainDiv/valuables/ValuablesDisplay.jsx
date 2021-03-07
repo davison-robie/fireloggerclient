@@ -25,14 +25,29 @@ const ValuablesDisplay = (props) => {
         fetchValuables();
     }, []);
 
+    const NoItems = () => {
+        return (
+            <div className="noItems">
+                <h1>No valuables to display</h1>
+                <p>Go to the Add Item page to start documenting important items!</p>
+            </div>
+        )
+    }
+
+    const HasItems = () => {
+        return (
+                <div className="itemContainer">
+                    <h1>Your Valuables</h1>
+                    <ItemsList valuables={valuables} fetchValuables={fetchValuables} token={props.token}/>
+                </div>
+        )
+    }
+
     return (
         <div className="main">
-            <div className="itemContainer">
-                <h1>Your Valuables</h1>
-                <ItemsList valuables={valuables} fetchValuables={fetchValuables} token={props.token}/>
-            </div>
+            {valuables.length === 0 ? <NoItems /> : <HasItems />}
         </div>
-    );
+    )
 }
  
 export default ValuablesDisplay;

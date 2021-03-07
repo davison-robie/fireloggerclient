@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 const OurStory = () => {
   return (
     <div className="ourstory">
-      <img src="https://res.cloudinary.com/dqaf1fih0/image/upload/b_rgb:f7f7f7,bo_9px_solid_rgb:f7f7f7,c_scale,co_rgb:ffffff,e_auto_contrast,r_21,w_566/v1614711313/photos-BBP/house_fire_gslytk.jpg" />
+      <img src="https://res.cloudinary.com/dqaf1fih0/image/upload/b_rgb:f7f7f7,bo_9px_solid_rgb:f7f7f7,c_scale,co_rgb:ffffff,e_auto_contrast,r_21,w_566/v1614711313/photos-BBP/house_fire_gslytk.jpg" class="img-fluid"/>
 
       <br />
       <br />

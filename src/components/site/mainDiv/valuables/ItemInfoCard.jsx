@@ -29,8 +29,8 @@ const ItemInfoCard = (props) => {
                         <Card className="itemInfoCard">
                             <CardImg src={props.valuable.photo} size="cover"/>
                             <CardFooter>
-                                <Button bottom width="67%" color="danger" onClick={() => {deleteValuable(props.valuable)}}>Delete</Button>
-                                <Button color="warning" onClick={(e) => {
+                                <Button bottom width="67%" outline color="warning" onClick={() => {deleteValuable(props.valuable)}}>Delete</Button>
+                                <Button outline color="warning" onClick={(e) => {
                                 props.editUpdateValuable(props.valuable);
                                 props.editOn()}}>Update</Button>
                             </CardFooter>

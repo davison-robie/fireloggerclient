@@ -2,19 +2,16 @@ import React, {useState} from 'react';
 import {Link } from "react-router-dom";
 import { 
     Button, 
-   Jumbotron
-} from 'reactstrap'; ;
+    Jumbotron
+} from 'reactstrap'
 
 const AboutUs = () => {
   
         return (
             <div className="aboutus">
             <h1>About Us</h1>
-            <img src ="https://res.cloudinary.com/dqaf1fih0/image/upload/v1614706728/photos-BBP/happypic_p5aa42.jpg"/>
-
+            <img src ="https://res.cloudinary.com/dqaf1fih0/image/upload/v1614706728/photos-BBP/happypic_p5aa42.jpg" class="img-fluid"/>
             <br/>
-            <br/>
-
             <Jumbotron>
               <h1 className="display-3">FireLogger as a Tool</h1>
               <p className="lead">FireLogger is a useful tool for both parties in an event of a house claim.</p>
@@ -28,7 +25,6 @@ const AboutUs = () => {
           </Button>
               </p>
             </Jumbotron>
-
             <Jumbotron>
               <h1 className="display-3">Our Founder</h1>
               <p className="lead">In 2007, Hank Flowers founded Firelogger.</p>

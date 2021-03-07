@@ -20,7 +20,7 @@ const HanksStory = () => {
         Illinois. He went to school for business and graduated in 1977 from UIS.
         He went on to create his own businesses but all four times failed. One
         day while at work he got a call from a neighbor that they had called the
-        fire department because his house was on fire. Though, a tragic
+        fire department because his house was on fire. Though it was a tragic
         experience, Hank came up with the idea of FireLogger. 
       </p>
       <Button outline color="secondary">

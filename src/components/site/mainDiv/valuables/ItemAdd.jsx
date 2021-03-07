@@ -95,9 +95,9 @@ const AddValuable = (props) => {
 
   return (
     <div className="main">
-      <Form onSubmit={handleSubmit}>
+      <h1 className="addHeader">Add Item</h1>
+      <Form onSubmit={handleSubmit} className="form">
         <FormGroup>
-            
           <Label for="category">Categories of Valuables</Label>
           <Input
             type="select"
