@@ -38,6 +38,7 @@ const AddValuable = (props) => {
   }
   const reload = () => window.location.reload();
 
+  /* CLOUDINARY FETCH */
   const uploadImage = async e => {
     const files = e.target.files 
     const data = new FormData()
@@ -179,6 +180,7 @@ const AddValuable = (props) => {
 
 <br/>
 <br/>
+    {/* CLOUDINARY UI */}
       <FormGroup>
       <FormText color="secondary">
         <Label for="photoUrl">Photo of Insured's Valuable</Label>
